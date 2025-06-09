@@ -1,0 +1,3991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Biodata</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Dancing+Script:wght@700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Dancing+Script:wght@700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+            height: 100vh;
+        }
+
+        .hero {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
+                        url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            z-index: 10;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .couple-names {
+            font-family: 'Dancing Script', cursive;
+            font-size: 6rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+            position: relative;
+            display: inline-block;
+        }
+
+        .couple-names::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, gold, transparent);
+            bottom: -10px;
+            left: 0;
+            transform: scaleX(0);
+            transform-origin: right;
+            animation: underline 2s 1s forwards;
+        }
+
+        .subheading {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: slideUp 1s 1.5s forwards;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .date-circle {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px 25px;
+            border-radius: 50px;
+            backdrop-filter: blur(5px);
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeInUp 1s 2s forwards;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .date-circle:hover {
+            background: rgba(255, 215, 0, 0.3);
+            transform: scale(1.05);
+        }
+
+        .petal {
+            position: absolute;
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.7;
+            z-index: 1;
+            animation: falling linear infinite;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes underline {
+            from { transform: scaleX(0); }
+            to { transform: scaleX(1); }
+        }
+
+        @keyframes falling {
+            0% {
+                top: -10%;
+                transform: translateX(0) rotate(0deg);
+            }
+            100% {
+                top: 100%;
+                transform: translateX(100px) rotate(360deg);
+            }
+        }
+
+        .heart {
+            position: absolute;
+            pointer-events: none;
+            opacity: 0;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+            opacity: 0;
+            animation: fadeIn 1s 3s forwards;
+        }
+
+        .scroll-hint p {
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .mouse {
+            width: 25px;
+            height: 40px;
+            border: 2px solid white;
+            border-radius: 15px;
+            position: relative;
+        }
+
+        .mouse-wheel {
+            width: 4px;
+            height: 8px;
+            background: white;
+            border-radius: 2px;
+            position: absolute;
+            top: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: scroll 2s infinite;
+        }
+
+        @keyframes scroll {
+            0% { top: 5px; opacity: 1; }
+            50% { top: 15px; opacity: 0.5; }
+            100% { top: 5px; opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            .couple-names {
+                font-size: 3.5rem;
+            }
+            .subheading {
+                font-size: 1.5rem;
+            }
+        }
+
+        .couple-section {
+            position: relative;
+            display: flex;
+            min-height: 100vh;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .profile {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s ease;
+        }
+
+        .bride {
+            background: linear-gradient(rgba(255, 240, 245, 0.9), rgba(255, 240, 245, 0.9));
+        }
+
+        .groom {
+            background: linear-gradient(rgba(240, 245, 255, 0.9), rgba(240, 245, 255, 0.9));
+        }
+
+        .profile:hover {
+            flex: 1.2;
+        }
+
+        .profile-image {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin-bottom: 2rem;
+            transform: scale(0.9);
+            transition: all 0.5s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .profile:hover .profile-image {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .profile-name {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            color: #333;
+            margin-bottom: 1rem;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease 0.2s;
+        }
+
+        .profile:hover .profile-name {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .profile-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease 0.3s;
+        }
+
+        .profile:hover .profile-title {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .profile-desc {
+            max-width: 400px;
+            text-align: center;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 2rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease 0.4s;
+        }
+
+        .profile:hover .profile-desc {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .heart-divider {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: 100px;
+            background-color: #ff6b6b;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+            box-shadow: 0 5px 20px rgba(255, 107, 107, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .heart-divider:hover {
+            transform: translate(-50%, -50%) scale(1.1);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.7);
+        }
+
+        .heart-divider::before,
+        .heart-divider::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: #ff6b6b;
+            border-radius: 50%;
+        }
+
+        .heart-divider::before {
+            top: -50px;
+            left: 0;
+        }
+
+        .heart-divider::after {
+            top: 0;
+            left: -50px;
+        }
+
+        .heart-icon {
+            color: white;
+            font-size: 2.5rem;
+            z-index: 11;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .floating-hearts {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .floating-heart {
+            position: absolute;
+            font-size: 1.5rem;
+            opacity: 0;
+            animation: float-up 4s linear infinite;
+        }
+
+        @keyframes float-up {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .hidden-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            text-align: center;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .profile:hover .hidden-details {
+            max-height: 200px;
+            margin-top: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease 0.5s;
+        }
+
+        .profile:hover .social-links {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .social-links a {
+            color: #666;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #ff6b6b;
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .couple-section {
+                flex-direction: column;
+            }
+            
+            .heart-divider {
+                top: auto;
+                bottom: -50px;
+                transform: translateX(-50%);
+            }
+            
+            .profile-name {
+                font-size: 2.5rem;
+            }
+            
+            .profile-image {
+                width: 200px;
+                height: 200px;
+            }
+        }
+
+        .timeline-section {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+        }
+
+        .timeline-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4rem;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #ff6b6b;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: fadeInDown 1s forwards 0.5s;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, #ffb6c1, #ff6b6b, #87cefa, #1e90ff);
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 80px;
+            width: 100%;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.5s ease;
+        }
+
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline-item:nth-child(odd) {
+            padding-right: calc(50% + 30px);
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            padding-left: calc(50% + 30px);
+            text-align: left;
+        }
+
+        .timeline-content {
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .timeline-date {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: #ff6b6b;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .timeline-title-item {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #333;
+            position: relative;
+            display: inline-block;
+        }
+
+        .timeline-title-item::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(to right, #ff6b6b, #87cefa);
+            transition: width 0.3s ease;
+        }
+
+        .timeline-content:hover .timeline-title-item::after {
+            width: 100%;
+        }
+
+        .timeline-text {
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .timeline-image {
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .timeline-image:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .timeline-icon {
+            position: absolute;
+            top: 0;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+            color: white;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+            z-index: 2;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-icon {
+            right: calc(50% - 30px);
+        }
+
+        .timeline-item:nth-child(even) .timeline-icon {
+            left: calc(50% - 30px);
+        }
+
+        .timeline-content:hover ~ .timeline-icon {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
+        }
+
+        .timeline-item:nth-child(2) .timeline-icon {
+            background: linear-gradient(45deg, #87cefa, #a4d8fa);
+        }
+
+        .timeline-item:nth-child(3) .timeline-icon {
+            background: linear-gradient(45deg, #ffb347, #ffcc33);
+        }
+
+        .timeline-item:nth-child(4) .timeline-icon {
+            background: linear-gradient(45deg, #7b68ee, #9370db);
+        }
+
+        .floating-hearts {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .floating-heart {
+            position: absolute;
+            font-size: 1.2rem;
+            opacity: 0;
+            animation: float-up 6s linear infinite;
+            color: #ff6b6b;
+        }
+
+        @keyframes float-up {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.7;
+            }
+            90% {
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .memory-highlight {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            z-index: 100;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .memory-highlight.active {
+            display: flex;
+            animation: fadeIn 0.5s forwards;
+        }
+
+        .memory-highlight img {
+            max-width: 80%;
+            max-height: 70vh;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .memory-highlight h3 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: #ff6b6b;
+        }
+
+        .memory-highlight p {
+            max-width: 600px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .close-memory {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            font-size: 2rem;
+            cursor: pointer;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .close-memory:hover {
+            color: #ff6b6b;
+            transform: rotate(90deg);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                padding-left: 70px;
+                padding-right: 20px;
+                text-align: left;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-icon,
+            .timeline-item:nth-child(even) .timeline-icon {
+                left: 0;
+                right: auto;
+            }
+
+            .timeline-title {
+                font-size: 3rem;
+            }
+        }
+
+
+         .biodata-container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .section-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #ff6b6b;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, transparent, #ff6b6b, transparent);
+            transform: scaleX(0);
+            transform-origin: right;
+            animation: underline 1.5s 0.5s forwards;
+        }
+
+        @keyframes underline {
+            from { transform: scaleX(0); }
+            to { transform: scaleX(1); }
+        }
+
+        .accordion {
+            width: 100%;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            background-color: white;
+            position: relative;
+        }
+
+        .accordion:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            transform: translateY(-3px);
+        }
+
+        .accordion-header {
+            padding: 20px 30px;
+            background: linear-gradient(to right, #ffb6c1, #ff8e8e);
+            color: white;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .accordion:nth-child(2) .accordion-header {
+            background: linear-gradient(to right, #87cefa, #6baed6);
+        }
+
+        .accordion:nth-child(3) .accordion-header {
+            background: linear-gradient(to right, #ffb347, #ff8c00);
+        }
+
+        .accordion:nth-child(4) .accordion-header {
+            background: linear-gradient(to right, #9370db, #7b68ee);
+        }
+
+        .accordion-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(255,255,255,0.2), rgba(255,255,255,0));
+            transform: translateX(-100%);
+            transition: all 0.4s ease;
+            z-index: -1;
+        }
+
+        .accordion-header:hover::before {
+            transform: translateX(0);
+        }
+
+        .accordion-header h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0;
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .accordion-header h3::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 30px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: #ff6b6b;
+            font-size: 14px;
+        }
+
+        .family h3::before {
+            content: '\f1ae';
+        }
+
+        .education h3::before {
+            content: '\f19d';
+            color: #6baed6;
+        }
+
+        .personality h3::before {
+            content: '\f2bd';
+            color: #ff8c00;
+        }
+
+        .partner h3::before {
+            content: '\f004';
+            color: #7b68ee;
+        }
+
+        .accordion-header .icon {
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .accordion.active .accordion-header .icon {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out, padding 0.3s ease;
+            background-color: white;
+        }
+
+        .accordion.active .accordion-content {
+            max-height: 1000px;
+            transition: max-height 0.8s ease-in, padding 0.3s ease;
+        }
+
+        .content-inner {
+            padding: 0 30px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease 0.3s;
+        }
+
+        .accordion.active .content-inner {
+            opacity: 1;
+            transform: translateY(0);
+            padding: 30px;
+        }
+
+        .detail-item {
+            margin-bottom: 30px;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .detail-item::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #ff6b6b;
+            font-size: 1.5rem;
+            line-height: 2;
+        }
+
+        .accordion:nth-child(2) .detail-item::before {
+            color: #6baed6;
+        }
+
+        .accordion:nth-child(3) .detail-item::before {
+            color: #ff8c00;
+        }
+
+        .accordion:nth-child(4) .detail-item::before {
+            color: #7b68ee;
+        }
+
+        .detail-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: #444;
+        }
+
+        .detail-item p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .progress-container {
+            margin-top: 15px;
+        }
+
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            border-radius: 4px;
+            background: linear-gradient(to right, #ff8e8e, #ff6b6b);
+            width: 0;
+            transition: width 1s ease 0.5s;
+        }
+
+        .accordion:nth-child(2) .progress-fill {
+            background: linear-gradient(to right, #6baed6, #87cefa);
+        }
+
+        .accordion:nth-child(3) .progress-fill {
+            background: linear-gradient(to right, #ff8c00, #ffb347);
+        }
+
+        .accordion:nth-child(4) .progress-fill {
+            background: linear-gradient(to right, #7b68ee, #9370db);
+        }
+
+        .accordion.active .progress-fill {
+            width: var(--progress-width);
+        }
+
+        .tag-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .tag {
+            background-color: #ffebee;
+            color: #ff6b6b;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+        }
+
+        .tag:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 3px 10px rgba(255, 107, 107, 0.2);
+        }
+
+        .accordion:nth-child(2) .tag {
+            background-color: #e3f2fd;
+            color: #6baed6;
+        }
+
+        .accordion:nth-child(3) .tag {
+            background-color: #fff3e0;
+            color: #ff8c00;
+        }
+
+        .accordion:nth-child(4) .tag {
+            background-color: #f3e5f5;
+            color: #7b68ee;
+        }
+
+        .floating-icons {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .floating-icon {
+            position: absolute;
+            font-size: 1.5rem;
+            opacity: 0;
+            animation: float-around 15s linear infinite;
+        }
+
+        @keyframes float-around {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.3;
+            }
+            90% {
+                opacity: 0.3;
+            }
+            100% {
+                transform: translate(100px, -100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background-color: #ff6b6b;
+            opacity: 0;
+            z-index: 100;
+            animation: confetti-fall 3s ease-out forwards;
+        }
+
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .accordion-header {
+                padding: 15px 20px;
+            }
+
+            .accordion-header h3 {
+                font-size: 1.2rem;
+                padding-left: 30px;
+            }
+
+            .accordion-header h3::before {
+                width: 25px;
+                height: 25px;
+                font-size: 12px;
+            }
+
+            .content-inner, .accordion.active .content-inner {
+                padding: 20px;
+            }
+        }
+
+         .gallery-section {
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #ff6b6b;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, transparent, #ff6b6b, transparent);
+            transform: scaleX(0);
+            transform-origin: right;
+            animation: underline 1.5s 0.5s forwards;
+        }
+
+        @keyframes underline {
+            from { transform: scaleX(0); }
+            to { transform: scaleX(1); }
+        }
+
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .filter-btn {
+            padding: 10px 25px;
+            border: none;
+            background: linear-gradient(to right, #ffb6c1, #ff8e8e);
+            color: white;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(255, 107, 107, 0.3);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .filter-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, #ff8e8e, #ff6b6b);
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .filter-btn:hover::before {
+            opacity: 1;
+        }
+
+        .filter-btn.active {
+            background: linear-gradient(to right, #ff6b6b, #ff4757);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+        }
+
+        .gallery-container {
+            columns: 3;
+            column-gap: 15px;
+        }
+
+        .gallery-item {
+            margin-bottom: 15px;
+            break-inside: avoid;
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transform: scale(0.98);
+            transition: all 0.5s ease;
+            opacity: 0;
+            animation: fadeInUp 0.5s forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px) scale(0.98);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(0.98);
+            }
+        }
+
+        .gallery-item:hover {
+            transform: scale(1);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: all 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            padding: 20px;
+            transform: translateY(100%);
+            transition: all 0.3s ease;
+            opacity: 0;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .gallery-caption h3 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .gallery-caption p {
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+
+        /* Lightbox Styles */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .lightbox.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .lightbox-img {
+            max-height: 80vh;
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+
+        .lightbox.active .lightbox-img {
+            transform: scale(1);
+        }
+
+        .lightbox-caption {
+            position: absolute;
+            bottom: -40px;
+            left: 0;
+            color: white;
+            text-align: center;
+            width: 100%;
+            padding: 10px;
+        }
+
+        .close-lightbox {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .close-lightbox:hover {
+            color: #ff6b6b;
+            transform: rotate(90deg);
+        }
+
+        .nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            background-color: rgba(255,255,255,0.2);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            opacity: 0.7;
+        }
+
+        .nav-btn:hover {
+            opacity: 1;
+            background-color: rgba(255,107,107,0.7);
+        }
+
+        .prev-btn {
+            left: -70px;
+        }
+
+        .next-btn {
+            right: -70px;
+        }
+
+        /* Floating Hearts */
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .floating-heart {
+            position: absolute;
+            font-size: 1.5rem;
+            opacity: 0;
+            animation: float-heart 10s linear infinite;
+            color: #ff6b6b;
+        }
+
+        @keyframes float-heart {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.7;
+            }
+            90% {
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Like Button Effect */
+        .like-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255,255,255,0.8);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: scale(0);
+        }
+
+        .gallery-item:hover .like-btn {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .like-btn i {
+            color: #ff6b6b;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .like-btn.active i {
+            color: #ff4757;
+            transform: scale(1.2);
+        }
+
+        .like-count {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: #ff4757;
+            color: white;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            font-size: 0.7rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        /* Responsive Layout */
+        @media (max-width: 992px) {
+            .gallery-container {
+                columns: 2;
+            }
+            
+            .prev-btn {
+                left: -50px;
+            }
+            
+            .next-btn {
+                right: -50px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .filter-buttons {
+                gap: 10px;
+            }
+            
+            .filter-btn {
+                padding: 8px 15px;
+                font-size: 0.8rem;
+            }
+            
+            .gallery-container {
+                columns: 1;
+            }
+            
+            .prev-btn, .next-btn {
+                display: none;
+            }
+            
+            .lightbox-caption {
+                bottom: -60px;
+            }
+        }
+
+          .wedding-details {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            text-align: center;
+            margin-bottom: 60px;
+            color: #ff6b6b;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(to right, #ff6b6b, #ffb6c1);
+        }
+
+        .details-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+        }
+
+        .detail-card {
+            flex: 1;
+            min-width: 300px;
+            background-color: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .detail-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,182,193,0.1), rgba(255,107,107,0.05));
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .detail-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .detail-card:hover::before {
+            opacity: 1;
+        }
+
+        .card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #ff6b6b;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .card-title i {
+            font-size: 2rem;
+            color: #ff6b6b;
+        }
+
+        .wedding-date {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #555;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .wedding-date i {
+            color: #ff8e8e;
+        }
+
+        .wedding-venue {
+            margin: 25px 0;
+            line-height: 1.6;
+            color: #666;
+        }
+
+        .venue-name {
+            font-weight: 600;
+            color: #444;
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+
+        .map-container {
+            height: 250px;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-top: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .map-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(255,255,255,0.2), rgba(255,255,255,0));
+            pointer-events: none;
+            transition: all 0.5s ease;
+        }
+
+        .map-container:hover .map-overlay {
+            opacity: 0;
+        }
+
+        /* Countdown Styles */
+        .countdown {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .countdown-item {
+            text-align: center;
+            flex: 1;
+            background: linear-gradient(to bottom, #ffb6c1, #ff8e8e);
+            color: white;
+            padding: 15px 10px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(255,107,107,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .detail-card:hover .countdown-item {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(255,107,107,0.4);
+        }
+
+        .countdown-number {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .countdown-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Schedule Styles */
+        .schedule-list {
+            margin-top: 20px;
+        }
+
+        .schedule-item {
+            display: flex;
+            margin-bottom: 25px;
+            position: relative;
+            padding-left: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .schedule-item:hover {
+            transform: translateX(10px);
+        }
+
+        .schedule-item::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background: linear-gradient(to bottom, #ffb6c1, transparent);
+        }
+
+        .schedule-item:last-child::before {
+            height: 50%;
+        }
+
+        .schedule-icon {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(to right, #ff8e8e, #ff6b6b);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 15px rgba(255,107,107,0.3);
+        }
+
+        .schedule-time {
+            font-weight: 600;
+            color: #ff6b6b;
+            margin-bottom: 5px;
+        }
+
+        .schedule-event {
+            font-weight: 600;
+            color: #444;
+            margin-bottom: 5px;
+        }
+
+        .schedule-desc {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* Floating Elements */
+        .floating-hearts {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .floating-heart {
+            position: absolute;
+            font-size: 1.5rem;
+            opacity: 0;
+            animation: float-up 10s linear infinite;
+            color: #ff6b6b;
+        }
+
+        @keyframes float-up {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.5;
+            }
+            90% {
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Save the Date Button */
+        .save-date-btn {
+            display: block;
+            margin: 40px auto 0;
+            padding: 15px 40px;
+            background: linear-gradient(to right, #ff6b6b, #ff4757);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(255,107,107,0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .save-date-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, #ff4757, #ff6b6b);
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .save-date-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255,107,107,0.4);
+        }
+
+        .save-date-btn:hover::before {
+            opacity: 1;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .detail-card {
+                min-width: 100%;
+            }
+
+            .countdown {
+                flex-wrap: wrap;
+            }
+
+            .countdown-item {
+                flex: 0 0 calc(50% - 10px);
+                margin-bottom: 10px;
+            }
+        }
+
+        /* Confetti Animation */
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background-color: #ff6b6b;
+            opacity: 0;
+            z-index: 100;
+            animation: confetti-fall 3s ease-out forwards;
+        }
+
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+
+        .rsvp-section {
+            padding: 80px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ff6b6b;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(to right, #ff6b6b, #ffb6c1);
+            animation: underlineGrow 1.5s ease-out forwards;
+        }
+
+        @keyframes underlineGrow {
+            from { width: 0; }
+            to { width: 100px; }
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 50px;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .rsvp-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+        }
+
+        .rsvp-form-container {
+            flex: 1;
+            min-width: 300px;
+            background-color: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeInUp 0.8s forwards 0.3s;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .rsvp-form-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,182,193,0.1), rgba(255,107,107,0.05));
+            z-index: -1;
+        }
+
+        .form-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: #ff6b6b;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: 600;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #ff8e8e;
+            box-shadow: 0 0 0 3px rgba(255,142,142,0.2);
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+
+        .radio-option input {
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border: 2px solid #ddd;
+            border-radius: 50%;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .radio-option input:checked {
+            border-color: #ff6b6b;
+        }
+
+        .radio-option input:checked::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 10px;
+            height: 10px;
+            background-color: #ff6b6b;
+            border-radius: 50%;
+        }
+
+        .radio-option span {
+            color: #555;
+        }
+
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(to right, #ff6b6b, #ff4757);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(255,107,107,0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255,107,107,0.4);
+        }
+
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, #ff4757, #ff6b6b);
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .submit-btn:hover::before {
+            opacity: 1;
+        }
+
+        .blessings-container {
+            flex: 1;
+            min-width: 300px;
+            background-color: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeInUp 0.8s forwards 0.6s;
+        }
+
+        .blessings-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(182,216,255,0.1), rgba(107,142,255,0.05));
+            z-index: -1;
+        }
+
+        .blessings-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: #7b68ee;
+            text-align: center;
+        }
+
+        .blessings-wall {
+            max-height: 400px;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+
+        .blessing-card {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            transform: scale(0.95);
+            opacity: 0;
+            animation: fadeInScale 0.5s forwards;
+            animation-delay: calc(var(--delay) * 0.1s);
+        }
+
+        @keyframes fadeInScale {
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .blessing-card::before {
+            content: '""';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: rgba(123,104,238,0.1);
+            line-height: 1;
+        }
+
+        .blessing-content {
+            font-style: italic;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .blessing-author {
+            font-weight: 600;
+            color: #7b68ee;
+            text-align: right;
+            font-size: 0.9rem;
+        }
+
+        /* Confirmation Modal */
+        .confirmation-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s ease;
+        }
+
+        .confirmation-modal.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .modal-content {
+            background-color: white;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            transform: scale(0.8);
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+
+        .confirmation-modal.active .modal-content {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .modal-icon {
+            font-size: 4rem;
+            color: #4CAF50;
+            margin-bottom: 20px;
+            animation: bounce 1s ease infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .modal-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #ff6b6b;
+        }
+
+        .modal-message {
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            color: #999;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .close-modal:hover {
+            color: #ff6b6b;
+            transform: rotate(90deg);
+        }
+
+        /* Floating Elements */
+        .floating-hearts {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .floating-heart {
+            position: absolute;
+            font-size: 1.5rem;
+            opacity: 0;
+            animation: float-up 10s linear infinite;
+            color: #ff6b6b;
+        }
+
+        @keyframes float-up {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.5;
+            }
+            90% {
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Confetti Animation */
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background-color: #ff6b6b;
+            opacity: 0;
+            z-index: 100;
+            animation: confetti-fall 3s ease-out forwards;
+        }
+
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .rsvp-form-container,
+            .blessings-container {
+                min-width: 100%;
+                padding: 30px;
+            }
+
+            .radio-group {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h1 class="couple-names">Tatya Vinchu & Annabelle</h1>
+            <h2 class="subheading">Together Forever</h2>
+            <div class="date-circle" id="dateCircle">00 • 00 • 0000</div>
+        </div>
+
+        <div class="scroll-hint">
+            <p>Scroll Down</p>
+            <div class="mouse">
+                <div class="mouse-wheel"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="couple-section">
+        <!-- Bride Profile -->
+        <div class="profile bride">
+            <div class="floating-hearts" id="brideHearts"></div>
+            <img src="data:image/jpeg;base64,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" alt="Bride" class="profile-image">
+            <h2 class="profile-name">Annabelle</h2>
+            <h3 class="profile-title">The Beautiful Bride</h3>
+            <p class="profile-desc">A Dead soul with a uncompleted dreams of killing and doing terrible crimes. Her laughter terrify every room she enters.</p>
+            
+            <div class="hidden-details">
+                <!-- <p>Born and raised in Mumbai</p> -->
+                <p>Master's in Fine Killing</p>
+                <p>Loves Crime, manupilating, and Spreding Terror & horror</p>
+            </div>
+            
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-pinterest"></i></a>
+            </div>
+        </div>
+        
+        <!-- Groom Profile -->
+       <div class="profile groom">
+            <div class="floating-hearts" id="groomHearts"></div>
+            <img src="data:image/jpeg;base64,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" alt="Groom" class="profile-image">
+            <h2 class="profile-name">Tatya Vinchu</h2>
+            <h3 class="profile-title">The Handsome Groom</h3>
+            <p class="profile-desc">A Serial Killer. His killing style and Spreding terror make him truly special.</p>
+            
+            <div class="hidden-details">
+                <p>Serieal killer from Maharashtra</p>
+                <p>Loves killing, laughing, and Mass Murder</p>
+                <p>Known for his terrible crimes and Slogan OM BHATT SWAHAAA</p>
+            </div>
+            
+            <div class="social-links">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+        
+        <!-- Heart Divider -->
+        <div class="heart-divider" id="heartDivider">
+            <div class="heart-icon">❤️</div>
+        </div>
+    </section>
+
+    <!-- Font Awesome for social icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    
+
+
+    <section class="timeline-section">
+        <h2 class="timeline-title">Our Love Story</h2>
+        
+        <div class="floating-hearts" id="timelineHearts"></div>
+        
+        <div class="timeline">
+            <!-- How They Met -->
+            <div class="timeline-item">
+                <div class="timeline-content" data-memory="met">
+                    <div class="timeline-date">June 2018</div>
+                    <h3 class="timeline-title-item">How We Met</h3>
+                    <p class="timeline-text">It all began at a mutual friend's funural party. Annabelle spilled her drink of blood on Tatya's shirt, and instead of getting angry, he made her laugh with a joke about colorful laundry.</p>
+                    <img src="https://i.ytimg.com/vi/ZUp8Vf1OyjQ/hq720_2.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAAlAADIQj0AgKJD8AEB-AG2CIACgA-KAgwIABABGFQgYShlMA8=&rs=AOn4CLCP-CN0EFMdRCemCHmDTbIW1TSzpQ" alt="Party where they met" class="timeline-image">
+                </div>
+                <div class="timeline-icon">
+                    <i class="fas fa-glass-cheers"></i>
+                </div>
+            </div>
+            
+            <!-- First Date -->
+            <div class="timeline-item">
+                <div class="timeline-content" data-memory="date">
+                    <div class="timeline-date">August 2018</div>
+                    <h3 class="timeline-title-item">First Date</h3>
+                    <p class="timeline-text">A bloody Drink shop turned into a 5-hour conversation. Tatya pretended to like Horror films to impress Annabelle, while she pretended to understand his horrifying jokes. The pretense didn't last long!</p>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5IvYorYwLpWaaTfNlIJHWDpankf9A2pkovw&s" alt="First date" class="timeline-image">
+                </div>
+                <div class="timeline-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+            </div>
+            
+            <!-- Engagement -->
+            <div class="timeline-item">
+                <div class="timeline-content" data-memory="engagement">
+                    <div class="timeline-date">December 2022</div>
+                    <h3 class="timeline-title-item">Engagement</h3>
+                    <p class="timeline-text">Tatya planned a "haunted picnic" at sunset point. When Annabelle opened the picnic basket, instead of sandwiches she found a ring. Her "Yes!" could be heard by Wiches down the mountain.</p>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmpkpOhfh9UvtU1CER0H6sXKlDC84mZrZ1Wg&s" alt="Engagement" class="timeline-image">
+                </div>
+                <div class="timeline-icon">
+                    <i class="fas fa-ring"></i>
+                </div>
+            </div>
+            
+            <!-- Wedding -->
+            <div class="timeline-item">
+                <div class="timeline-content" data-memory="wedding">
+                    <div class="timeline-date">Coming Soon - December 2023</div>
+                    <h3 class="timeline-title-item">The Wedding</h3>
+                    <p class="timeline-text">Join us as we begin our forever! The celebration will be at the beautiful Sunset Gardens, surrounded by our loved ones and countless happy memories yet to be made.</p>
+                    <img src="https://assets.easyweddings.com/files/2021/10/31133647/Blake-Hogge-Photography-scaled.jpg" alt="Wedding venue" class="timeline-image">
+                </div>
+                <div class="timeline-icon">
+                    <i class="fas fa-church"></i>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Memory Highlight Modal -->
+        <div class="memory-highlight" id="memoryHighlight">
+            <span class="close-memory">&times;</span>
+            <img id="highlightImage" src="" alt="Memory highlight">
+            <h3 id="highlightTitle"></h3>
+            <p id="highlightText"></p>
+            <div id="highlightExtras"></div>
+        </div>
+    </section>
+
+     <div class="biodata-container">
+        <div class="floating-icons" id="floatingIcons"></div>
+        
+        <h2 class="section-title">Biodata Details</h2>
+        
+        <!-- Family Background -->
+        <div class="accordion family">
+            <div class="accordion-header">
+                <h3>Family Background</h3>
+                <span class="icon"><i class="fas fa-chevron-down"></i></span>
+            </div>
+            <div class="accordion-content">
+                <div class="content-inner">
+                    <div class="detail-item">
+                        <h4>Father</h4>
+                        <p>Mr. Sanjay Sharma, Retired Bank Manager</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Mother</h4>
+                        <p>Mrs. Rekha Sharma, Homemaker</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Siblings</h4>
+                        <p>One younger brother, Ankit (Software Engineer in Bangalore)</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Native Place</h4>
+                        <p>Jaipur, Rajasthan - Our family has been settled here for three generations</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Family Values</h4>
+                        <p>Traditional yet progressive, education-focused, and strongly believes in mutual respect</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Education & Career -->
+        <div class="accordion education">
+            <div class="accordion-header">
+                <h3>Education & Career</h3>
+                <span class="icon"><i class="fas fa-chevron-down"></i></span>
+            </div>
+            <div class="accordion-content">
+                <div class="content-inner">
+                    <div class="detail-item">
+                        <h4>Education</h4>
+                        <p>Masters in Fine Arts from JJ School of Arts, Mumbai (2015)</p>
+                        <p>Bachelor's in Visual Arts from Delhi University (2013)</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Current Profession</h4>
+                        <p>Art Director at Creative Minds Advertising Agency (2018-Present)</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Previous Experience</h4>
+                        <p>Graphic Designer at Brand Solutions (2015-2018)</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Skills</h4>
+                        <div class="progress-container">
+                            <div class="progress-label">
+                                <span>Graphic Design</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="--progress-width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-label">
+                                <span>Team Leadership</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="--progress-width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-label">
+                                <span>Photography</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="--progress-width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Personality & Interests -->
+        <div class="accordion personality">
+            <div class="accordion-header">
+                <h3>Personality & Interests</h3>
+                <span class="icon"><i class="fas fa-chevron-down"></i></span>
+            </div>
+            <div class="accordion-content">
+                <div class="content-inner">
+                    <div class="detail-item">
+                        <h4>Personality Traits</h4>
+                        <div class="tag-container">
+                            <div class="tag">Creative</div>
+                            <div class="tag">Compassionate</div>
+                            <div class="tag">Adventurous</div>
+                            <div class="tag">Organized</div>
+                            <div class="tag">Good Listener</div>
+                            <div class="tag">Optimistic</div>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Hobbies</h4>
+                        <p>Painting (especially watercolors), photography, hiking, baking desserts, and reading historical fiction</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Favorite Things</h4>
+                        <p>Rainy days, old Hindi songs, street food adventures, and spontaneous road trips</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Life Philosophy</h4>
+                        <p>"Find joy in the little things and create beauty wherever you go"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Partner Expectations -->
+        <div class="accordion partner">
+            <div class="accordion-header">
+                <h3>Partner Expectations</h3>
+                <span class="icon"><i class="fas fa-chevron-down"></i></span>
+            </div>
+            <div class="accordion-content">
+                <div class="content-inner">
+                    <div class="detail-item">
+                        <h4>Qualities Looking For</h4>
+                        <div class="tag-container">
+                            <div class="tag">Respectful</div>
+                            <div class="tag">Good Sense of Humor</div>
+                            <div class="tag">Ambitious</div>
+                            <div class="tag">Family-Oriented</div>
+                            <div class="tag">Emotionally Intelligent</div>
+                            <div class="tag">Open-Minded</div>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Shared Values</h4>
+                        <p>Looking for someone who values honesty, mutual respect, and believes in growing together as partners</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Lifestyle Compatibility</h4>
+                        <p>Would love someone who enjoys both quiet evenings at home and occasional adventures</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Thoughts on Marriage</h4>
+                        <p>"Marriage is a partnership where we bring out the best in each other, Supportive and create a loving home"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <section class="gallery-section">
+        <h2 class="section-title">Our Photo Gallery</h2>
+        
+        <div class="floating-hearts" id="floatingHearts"></div>
+        
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All Photos</button>
+            <button class="filter-btn" data-filter="couple">Couple Photos</button>
+            <button class="filter-btn" data-filter="bride">Bride Portraits</button>
+            <button class="filter-btn" data-filter="groom">Groom Portraits</button>
+            <button class="filter-btn" data-filter="family">Family Photos</button>
+        </div>
+        
+        <div class="gallery-container" id="galleryContainer">
+            <!-- Couple Photos -->
+            <div class="gallery-item" data-category="couple">
+                <img src="https://static.vecteezy.com/system/resources/thumbnails/054/408/002/small/a-dark-and-eerie-graveyard-at-night-with-a-single-tree-branch-silhouetted-against-a-moonlit-sky-and-several-tombstones-standing-tall-in-the-fog-video.jpg" alt="Couple on beach">
+                <div class="gallery-caption">
+                    <h3>Graveyard Walk</h3>
+                    <p>Our first vacation together in Goa</p>
+                </div>
+                <div class="like-btn">
+                    <i class="far fa-heart"></i>
+                    <span class="like-count">24</span>
+                </div>
+            </div>
+            
+            <div class="gallery-item" data-category="couple">
+                <img src="https://static.toiimg.com/thumb/msid-74692294,width-1280,height-720,resizemode-4/74692294.jpg" alt="Couple laughing">
+                <div class="gallery-caption">
+                    <h3>Tatya's Cute Smile (by the POV of Anna)</h3>
+                    <p>That time Annabelle told his terrible joke</p>
+                </div>
+                <div class="like-btn">
+                    <i class="far fa-heart"></i>
+                    <span class="like-count">32</span>
+                </div>
+            </div>
+            
+            <!-- Bride Portraits -->
+            <div class="gallery-item" data-category="bride">
+                <img src="https://i.guim.co.uk/img/media/f1a41d0a93ffc8d6802cec61ab913b34574c52ac/901_0_4131_2480/master/4131.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=104090b727e95177091994aeccc95aef" alt="Bride portrait">
+                <div class="gallery-caption">
+                    <h3>Annabelle's Portrait</h3>
+                    <p>Photoshoot for her art exhibition</p>
+                </div>
+                <div class="like-btn">
+                    <i class="far fa-heart"></i>
+                    <span class="like-count">45</span>
+                </div>
+            </div>
+            
+            <div class="gallery-item" data-category="bride">
+                <img src="https://fatcatcollectibles.in/cdn/shop/files/518QzyCX5aL.jpg?v=1718363256" alt="Bride painting">
+                <div class="gallery-caption">
+                    <h3>Annabelle</h3>
+                    <p>Annabelle working on her latest painting</p>
+                </div>
+                <div class="like-btn">
+                    <i class="far fa-heart"></i>
+                    <span class="like-count">28</span>
+                </div>
+            </div>
+            
+            <!-- Groom Portraits -->
+            <div class="gallery-item" data-category="groom">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/06/Dilip_Prabhavalkar_as_Tatya_Vinchu.jpg/250px-Dilip_Prabhavalkar_as_Tatya_Vinchu.jpg" alt="Groom portrait">
+                <div class="gallery-caption">
+                    <h3>Tatya at Work</h3>
+                    <p>Presenting his talent by using his favorite slogan OM BHATT SWAHAA</p>
+                </div>
+                <div class="like-btn">
+                    <i class="far fa-heart"></i>
+                    <span class="like-count">99</span>
+                </div>
+            </div>
+            
+            <div class="gallery-item" data-category="groom">
+                <img src="https://c4.wallpaperflare.com/wallpaper/351/643/645/prometheus-movie-concept-art-horror-movies-clouds-hd-wallpaper-preview.jpg" alt="Groom hiking">
+                <div class="gallery-caption">
+                    <h3>Mountain Adventure</h3>
+                    <p>Tatya and Annabelle's Favorite Spot</p>
+                </div>
+                <div class="like-btn">
+                    <i class="far fa-heart"></i>
+                    <span class="like-count">15</span>
+                </div>
+            </div>
+            
+            <!-- Family Photos -->
+            <div class="gallery-item" data-category="family">
+                <img src="https://www.safefood.net/getmedia/94101697-3c3f-4fe1-8ae8-5b595d3814ba/medium-rare-steak.jpg?width=2000&height=1333&ext=.jpg" alt="Family gathering">
+                <div class="gallery-caption">
+                    <h3>Family Dinner</h3>
+                    <p>First meeting of both families</p>
+                </div>
+                <div class="like-btn">
+                    <i class="far fa-heart"></i>
+                    <span class="like-count">37</span>
+                </div>
+            </div>
+            
+            <div class="gallery-item" data-category="family">
+                <img src="https://junebugweddings.com/wedding-blog/wp-content/uploads/2023/12/engagement-party-themes-daria-artischeva.jpg" alt="Family celebration">
+                <div class="gallery-caption">
+                    <h3>Engagement Party</h3>
+                    <p>Celebrating with all our loved ones</p>
+                </div>
+                <div class="like-btn">
+                    <i class="far fa-heart"></i>
+                    <span class="like-count">52</span>
+                </div>
+            </div>
+            
+            <!-- More Couple Photos -->
+            
+            
+          
+        
+        <!-- Lightbox -->
+        <div class="lightbox" id="lightbox">
+            <span class="close-lightbox">&times;</span>
+            <button class="nav-btn prev-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+            <div class="lightbox-content">
+                <img src="" alt="" class="lightbox-img" id="lightboxImg">
+                <div class="lightbox-caption">
+                    <h3 id="lightboxTitle"></h3>
+                    <p id="lightboxDesc"></p>
+                </div>
+            </div>
+            <button class="nav-btn next-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+    <section class="wedding-details">
+        <div class="floating-hearts" id="floatingHearts"></div>
+        
+        <h2 class="section-title">Wedding Details</h2>
+        
+        <div class="details-container">
+            <!-- Date & Venue Card -->
+            <div class="detail-card">
+                <h3 class="card-title"><i class="fas fa-calendar-alt"></i> Date & Venue</h3>
+                
+                <div class="wedding-date">
+                    <i class="fas fa-clock"></i>
+                    <span>December 15, 2023 • 6:00 PM</span>
+                </div>
+                
+                <div class="wedding-venue">
+                    <div class="venue-name">The Grand Sunset Resort</div>
+                    <p>123 Beachfront Avenue, Goa, India</p>
+                    <p>Dress Code: Semi-Formal / Traditional</p>
+                </div>
+                
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12345.678901234567!2d73.8278265!3d15.4989445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTXCsDI5JzU2LjIiTiA3M8KwNDknNDAuMiJF!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+                    <div class="map-overlay"></div>
+                </div>
+            </div>
+            
+            <!-- Countdown Card -->
+            <div class="detail-card">
+                <h3 class="card-title"><i class="fas fa-hourglass-half"></i> Countdown</h3>
+                
+                <p style="color: #666; margin-bottom: 20px; line-height: 1.6;">
+                    We're counting down the moments until we say "I Do"! Can't wait to celebrate with you.
+                </p>
+                
+                <div class="countdown" id="countdown">
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="days">00</div>
+                        <div class="countdown-label">Days</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="hours">00</div>
+                        <div class="countdown-label">Hours</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="minutes">00</div>
+                        <div class="countdown-label">Minutes</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="seconds">00</div>
+                        <div class="countdown-label">Seconds</div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 30px; text-align: center;">
+                    <p style="color: #ff6b6b; font-style: italic;">
+                        "Every love story is beautiful, but ours is my favorite"
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Schedule Card -->
+            <div class="detail-card">
+                <h3 class="card-title"><i class="fas fa-list-alt"></i> Event Schedule</h3>
+                
+                <div class="schedule-list">
+                    <div class="schedule-item">
+                        <div class="schedule-icon">
+                            <i class="fas fa-glass-cheers"></i>
+                        </div>
+                        <div class="schedule-content">
+                            <div class="schedule-time">5:00 PM - 6:00 PM</div>
+                            <div class="schedule-event">Welcome Drinks</div>
+                            <div class="schedule-desc">Arrival of guests at the resort garden</div>
+                        </div>
+                    </div>
+                    
+                    <div class="schedule-item">
+                        <div class="schedule-icon">
+                            <i class="fas fa-umbrella-beach"></i>
+                        </div>
+                        <div class="schedule-content">
+                            <div class="schedule-time">6:00 PM - 6:45 PM</div>
+                            <div class="schedule-event">Beachside Ceremony</div>
+                            <div class="schedule-desc">Exchange of vows at sunset point</div>
+                        </div>
+                    </div>
+                    
+                    <div class="schedule-item">
+                        <div class="schedule-icon">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <div class="schedule-content">
+                            <div class="schedule-time">6:45 PM - 7:30 PM</div>
+                            <div class="schedule-event">Photography Session</div>
+                            <div class="schedule-desc">Family and couple photos</div>
+                        </div>
+                    </div>
+                    
+                    <div class="schedule-item">
+                        <div class="schedule-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <div class="schedule-content">
+                            <div class="schedule-time">7:30 PM - 10:00 PM</div>
+                            <div class="schedule-event">Reception Dinner</div>
+                            <div class="schedule-desc">Gourmet dining with live music</div>
+                        </div>
+                    </div>
+                    
+                    <div class="schedule-item">
+                        <div class="schedule-icon">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <div class="schedule-content">
+                            <div class="schedule-time">10:00 PM - Midnight</div>
+                            <div class="schedule-event">Dance Party</div>
+                            <div class="schedule-desc">Let's dance the night away!</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <button class="save-date-btn" id="saveDateBtn">
+            <i class="far fa-calendar-plus"></i> Save the Date
+        </button>
+    </section>
+
+
+     <section class="rsvp-section">
+        <div class="floating-hearts" id="floatingHearts"></div>
+        
+        <h2 class="section-title">RSVP</h2>
+        <p class="section-subtitle">
+            Kindly respond by December 1st, 2023. We can't wait to celebrate with you! 
+            Leave us a sweet message if you'd like.
+        </p>
+        
+        <div class="rsvp-container">
+            <div class="rsvp-form-container">
+                <h3 class="form-title">Will You Attend?</h3>
+                <form id="rsvpForm">
+                    <div class="form-group">
+                        <label for="name">Your Name(s)</label>
+                        <input type="text" id="name" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Attendance</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="attendance" value="accept" checked>
+                                <span>Joyfully Accept</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="attendance" value="decline">
+                                <span>Regretfully Decline</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group" id="guestsGroup">
+                        <label for="guests">Number of Guests</label>
+                        <select id="guests" class="form-control">
+                            <option value="1">1</option>
+                            <option value="2" selected>2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5+</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Your Blessing/Message (Optional)</label>
+                        <textarea id="message" class="form-control" placeholder="Share your well wishes for the couple..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i> Send Response
+                    </button>
+                </form>
+            </div>
+            
+            <div class="blessings-container">
+                <h3 class="blessings-title">Blessings Wall</h3>
+                <div class="blessings-wall" id="blessingsWall">
+                    <!-- Sample blessings - will be populated with real messages -->
+                    <div class="blessing-card" style="--delay: 1">
+                        <p class="blessing-content">Wishing you both a lifetime of love, happiness, and beautiful memories together!</p>
+                        <p class="blessing-author">- Kubdya Khabis (Tatya's Friednds)</p>
+                    </div>
+                    <div class="blessing-card" style="--delay: 2">
+                        <p class="blessing-content">May your love continue to grow with each passing day. So happy for you both!</p>
+                        <p class="blessing-author">- Annabelle's College Friend</p>
+                    </div>
+                    <div class="blessing-card" style="--delay: 3">
+                        <p class="blessing-content">The perfect match! Can't wait to celebrate your special day with you.</p>
+                        <p class="blessing-author">- Devil & Witchs Family</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Confirmation Modal -->
+        <div class="confirmation-modal" id="confirmationModal">
+            <div class="modal-content">
+                <span class="close-modal" id="closeModal">&times;</span>
+                <div class="modal-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h3 class="modal-title">Thank You!</h3>
+                <p class="modal-message" id="modalMessage">We've received your RSVP and can't wait to celebrate with you!</p>
+                <button class="submit-btn" id="modalCloseBtn" style="width: auto; padding: 10px 30px;">
+                    Wonderful!
+                </button>
+            </div>
+        </div>
+    </section>
+    <script>
+        // Create falling petals
+        function createPetals() {
+            const hero = document.querySelector('.hero');
+            const petalCount = 15;
+            const petalTypes = 5; // Number of different petal images
+            
+            for (let i = 0; i < petalCount; i++) {
+                const petal = document.createElement('div');
+                petal.className = 'petal';
+                
+                // Random petal image (using emoji as placeholder - replace with actual images)
+                const petalType = Math.floor(Math.random() * petalTypes) + 1;
+                petal.innerHTML = '🌸'; // Replace with <img src="petal1.png"> in actual implementation
+                
+                // Random size
+                const size = Math.random() * 20 + 10;
+                petal.style.width = `${size}px`;
+                petal.style.height = `${size}px`;
+                
+                // Random position
+                petal.style.left = `${Math.random() * 100}vw`;
+                
+                // Random animation duration and delay
+                const duration = Math.random() * 10 + 5;
+                const delay = Math.random() * 5;
+                petal.style.animationDuration = `${duration}s`;
+                petal.style.animationDelay = `${delay}s`;
+                
+                hero.appendChild(petal);
+            }
+        }
+
+        // Create floating hearts on click
+        function setupHearts() {
+            const hero = document.getElementById('hero');
+            
+            hero.addEventListener('click', (e) => {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.innerHTML = '❤️';
+                heart.style.left = `${e.clientX}px`;
+                heart.style.top = `${e.clientY}px`;
+                heart.style.fontSize = `${Math.random() * 20 + 10}px`;
+                
+                hero.appendChild(heart);
+                
+                // Remove heart after animation
+                setTimeout(() => {
+                    heart.remove();
+                }, 4000);
+            });
+        }
+
+        // Date circle hover effect
+        function setupDateCircle() {
+            const dateCircle = document.getElementById('dateCircle');
+            
+            dateCircle.addEventListener('mouseover', () => {
+                dateCircle.textContent = 'Save the Date!';
+            });
+            
+            dateCircle.addEventListener('mouseout', () => {
+                dateCircle.textContent = '15 • 12 • 2023';
+            });
+            
+            dateCircle.addEventListener('click', () => {
+                alert('We can\'t wait to see you on December 15th, 2023!');
+            });
+        }
+
+        // Initialize all effects
+        window.addEventListener('DOMContentLoaded', () => {
+            createPetals();
+            setupHearts();
+            setupDateCircle();
+        });
+
+           // Create floating hearts for both profiles
+           function createFloatingHearts() {
+            const brideHearts = document.getElementById('brideHearts');
+            const groomHearts = document.getElementById('groomHearts');
+            
+            // Colors for hearts
+            const brideColors = ['#ffb6c1', '#ff69b4', '#ff1493', '#ffc0cb'];
+            const groomColors = ['#add8e6', '#87cefa', '#1e90ff', '#b0e0e6'];
+            
+            // Create hearts for bride side
+            for (let i = 0; i < 8; i++) {
+                createHeart(brideHearts, brideColors);
+            }
+            
+            // Create hearts for groom side
+            for (let i = 0; i < 8; i++) {
+                createHeart(groomHearts, groomColors);
+            }
+        }
+        
+        function createHeart(container, colors) {
+            const heart = document.createElement('div');
+            heart.className = 'floating-heart';
+            heart.innerHTML = '❤️';
+            
+            // Random position
+            heart.style.left = `${Math.random() * 100}%`;
+            heart.style.bottom = `${Math.random() * 20}%`;
+            
+            // Random color
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            heart.style.color = color;
+            
+            // Random size
+            const size = Math.random() * 0.8 + 0.5;
+            heart.style.fontSize = `${size}rem`;
+            
+            // Random animation duration and delay
+            const duration = Math.random() * 3 + 4;
+            const delay = Math.random() * 5;
+            heart.style.animationDuration = `${duration}s`;
+            heart.style.animationDelay = `${delay}s`;
+            
+            container.appendChild(heart);
+        }
+        
+        // Heart divider click effect
+        function setupHeartDivider() {
+            const heartDivider = document.getElementById('heartDivider');
+            const coupleSection = document.querySelector('.couple-section');
+            
+            heartDivider.addEventListener('click', () => {
+                // Create burst effect
+                for (let i = 0; i < 20; i++) {
+                    const heart = document.createElement('div');
+                    heart.className = 'floating-heart';
+                    heart.innerHTML = '❤️';
+                    heart.style.left = '50%';
+                    heart.style.top = '50%';
+                    heart.style.color = '#ff6b6b';
+                    heart.style.fontSize = `${Math.random() * 1 + 1}rem`;
+                    heart.style.animationDuration = `${Math.random() * 2 + 1}s`;
+                    
+                    // Random direction
+                    const angle = Math.random() * Math.PI * 2;
+                    const distance = 100 + Math.random() * 50;
+                    const x = Math.cos(angle) * distance;
+                    const y = Math.sin(angle) * distance;
+                    
+                    heart.style.transform = `translate(-50%, -50%) translate(${x}px, ${y}px)`;
+                    heart.style.opacity = '1';
+                    
+                    coupleSection.appendChild(heart);
+                    
+                    // Remove after animation
+                    setTimeout(() => {
+                        heart.remove();
+                    }, 3000);
+                }
+                
+                // Show message
+                const message = document.createElement('div');
+                message.textContent = 'Made For Each Other!';
+                message.style.position = 'absolute';
+                message.style.left = '50%';
+                message.style.top = '50%';
+                message.style.transform = 'translate(-50%, -50%)';
+                message.style.color = 'white';
+                message.style.fontFamily = "'Dancing Script', cursive";
+                message.style.fontSize = '2rem';
+                message.style.zIndex = '12';
+                message.style.textShadow = '0 2px 5px rgba(0,0,0,0.3)';
+                message.style.opacity = '0';
+                message.style.animation = 'fadeInOut 2s forwards';
+                
+                coupleSection.appendChild(message);
+                
+                setTimeout(() => {
+                    message.remove();
+                }, 2000);
+            });
+            
+            // Add keyframes for fadeInOut
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes fadeInOut {
+                    0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
+                    50% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+                    100% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
+                }
+            `;
+            document.head.appendChild(style);
+        }
+        
+        // Hover effects for profiles
+        function setupProfileHover() {
+            const profiles = document.querySelectorAll('.profile');
+            
+            profiles.forEach(profile => {
+                profile.addEventListener('mouseenter', () => {
+                    // Create additional floating hearts on hover
+                    const heartsContainer = profile.querySelector('.floating-hearts');
+                    for (let i = 0; i < 5; i++) {
+                        const colors = profile.classList.contains('bride') ? 
+                            ['#ffb6c1', '#ff69b4', '#ff1493', '#ffc0cb'] : 
+                            ['#add8e6', '#87cefa', '#1e90ff', '#b0e0e6'];
+                        createHeart(heartsContainer, colors);
+                    }
+                });
+            });
+        }
+        
+        // Initialize all effects
+        window.addEventListener('DOMContentLoaded', () => {
+            createFloatingHearts();
+            setupHeartDivider();
+            setupProfileHover();
+        });
+
+           // Create floating hearts for timeline
+           function createTimelineHearts() {
+            const container = document.getElementById('timelineHearts');
+            const heartCount = 15;
+            
+            for (let i = 0; i < heartCount; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'floating-heart';
+                heart.innerHTML = '❤️';
+                
+                // Random position
+                heart.style.left = `${Math.random() * 100}%`;
+                
+                // Random size
+                const size = Math.random() * 0.8 + 0.5;
+                heart.style.fontSize = `${size}rem`;
+                
+                // Random animation duration and delay
+                const duration = Math.random() * 4 + 6;
+                const delay = Math.random() * 5;
+                heart.style.animationDuration = `${duration}s`;
+                heart.style.animationDelay = `${delay}s`;
+                
+                // Random color
+                const colors = ['#ff6b6b', '#ff8e8e', '#ffb6c1', '#87cefa'];
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                heart.style.color = color;
+                
+                container.appendChild(heart);
+            }
+        }
+        
+        // Animate timeline items on scroll
+        function animateOnScroll() {
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            timelineItems.forEach(item => {
+                observer.observe(item);
+            });
+        }
+        
+        // Setup memory highlights
+        function setupMemoryHighlights() {
+            const memoryContents = document.querySelectorAll('.timeline-content');
+            const highlight = document.getElementById('memoryHighlight');
+            const closeBtn = document.querySelector('.close-memory');
+            
+            // Memory data
+            const memories = {
+                met: {
+                    title: "How We Met",
+                    text: "That fateful night at Sam's birthday party changed everything. What started as an awkward accident turned into hours of conversation by the poolside. Raj still claims he planned the drink spill all along!",
+                    extras: "<p><i class='fas fa-quote-left'></i> I knew she was special when she offered to pay for dry cleaning but ended up making me laugh instead <i class='fas fa-quote-right'></i> - Raj</p>"
+                },
+                date: {
+                    title: "First Date Magic",
+                    text: "The coffee shop became 'their place' after that first date. They still visit every anniversary and sit at the same corner table, though now they're honest about their tastes in movies and jokes!",
+                    extras: "<div class='fun-fact'><i class='fas fa-lightbulb'></i> Fun fact: They both secretly Googled each other's interests before the date!</div>"
+                },
+                engagement: {
+                    title: "The Perfect Proposal",
+                    text: "Raj had been planning the picnic proposal for months, waiting for the perfect sunset. What he didn't plan was Priya spotting the ring box shape in the basket immediately!",
+                    extras: "<p><i class='fas fa-camera'></i> Scroll through our engagement photos</p><div class='mini-gallery'>...</div>"
+                },
+                wedding: {
+                    title: "Our Upcoming Wedding",
+                    text: "The countdown is on! We're putting final touches on what will be the most beautiful day of our lives. Can't wait to celebrate with all our loved ones!",
+                    extras: "<div class='countdown' id='weddingCountdown'></div>"
+                }
+            };
+            
+            // Click event for memory items
+            memoryContents.forEach(item => {
+                item.addEventListener('click', () => {
+                    const memoryId = item.getAttribute('data-memory');
+                    const memory = memories[memoryId];
+                    const imgSrc = item.querySelector('img').src;
+                    
+                    document.getElementById('highlightImage').src = imgSrc;
+                    document.getElementById('highlightTitle').textContent = memory.title;
+                    document.getElementById('highlightText').textContent = memory.text;
+                    document.getElementById('highlightExtras').innerHTML = memory.extras;
+                    
+                    highlight.classList.add('active');
+                    
+                    // Special setup for wedding countdown
+                    if (memoryId === 'wedding') {
+                        setupCountdown();
+                    }
+                });
+            });
+            
+            // Close highlight
+            closeBtn.addEventListener('click', () => {
+                highlight.classList.remove('active');
+            });
+            
+            // Close when clicking outside content
+            highlight.addEventListener('click', (e) => {
+                if (e.target === highlight) {
+                    highlight.classList.remove('active');
+                }
+            });
+        }
+        
+        // Setup wedding countdown
+        function setupCountdown() {
+            const weddingDate = new Date('December 15, 2023 00:00:00').getTime();
+            const countdownEl = document.getElementById('weddingCountdown');
+            
+            if (!countdownEl) return;
+            
+            const updateCountdown = () => {
+                const now = new Date().getTime();
+                const distance = weddingDate - now;
+                
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                countdownEl.innerHTML = `
+                    <div class="countdown-item">
+                        <div class="countdown-number">${days}</div>
+                        <div class="countdown-label">Days</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number">${hours}</div>
+                        <div class="countdown-label">Hours</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number">${minutes}</div>
+                        <div class="countdown-label">Minutes</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number">${seconds}</div>
+                        <div class="countdown-label">Seconds</div>
+                    </div>
+                `;
+            };
+            
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+        }
+        
+        // Initialize all effects
+        window.addEventListener('DOMContentLoaded', () => {
+            createTimelineHearts();
+            animateOnScroll();
+            setupMemoryHighlights();
+            
+            // Add some style to countdown
+            const style = document.createElement('style');
+            style.textContent = `
+                .countdown {
+                    display: flex;
+                    justify-content: center;
+                    gap: 15px;
+                    margin-top: 20px;
+                }
+                .countdown-item {
+                    text-align: center;
+                    background: rgba(255,255,255,0.2);
+                    padding: 10px 15px;
+                    border-radius: 10px;
+                    min-width: 70px;
+                }
+                .countdown-number {
+                    font-size: 1.8rem;
+                    font-weight: bold;
+                    color: #ff6b6b;
+                }
+                .countdown-label {
+                    font-size: 0.8rem;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                }
+                .fun-fact {
+                    background: rgba(255,255,255,0.1);
+                    padding: 10px;
+                    border-radius: 5px;
+                    margin-top: 10px;
+                }
+                .fa-quote-left, .fa-quote-right {
+                    color: #ff6b6b;
+                    opacity: 0.7;
+                }
+            `;
+            document.head.appendChild(style);
+        });
+
+         // Create floating icons
+        function createFloatingIcons() {
+            const container = document.getElementById('floatingIcons');
+            const icons = ['❤️', '🎨', '📚', '📷', '✏️', '🎂', '🎶', '🌄', '📖'];
+            
+            for (let i = 0; i < 15; i++) {
+                const icon = document.createElement('div');
+                icon.className = 'floating-icon';
+                icon.innerHTML = icons[Math.floor(Math.random() * icons.length)];
+                
+                // Random position
+                icon.style.left = `${Math.random() * 100}%`;
+                icon.style.top = `${Math.random() * 100}%`;
+                
+                // Random size
+                const size = Math.random() * 1 + 1;
+                icon.style.fontSize = `${size}rem`;
+                
+                // Random color
+                const colors = ['#ff6b6b', '#6baed6', '#ff8c00', '#7b68ee', '#555'];
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                icon.style.color = color;
+                
+                // Random animation duration and delay
+                const duration = Math.random() * 10 + 15;
+                const delay = Math.random() * 10;
+                icon.style.animationDuration = `${duration}s`;
+                icon.style.animationDelay = `${delay}s`;
+                
+                container.appendChild(icon);
+            }
+        }
+        
+        // Accordion functionality
+        function setupAccordions() {
+            const accordions = document.querySelectorAll('.accordion');
+            
+            accordions.forEach(accordion => {
+                const header = accordion.querySelector('.accordion-header');
+                
+                header.addEventListener('click', () => {
+                    // Close all other accordions
+                    accordions.forEach(otherAcc => {
+                        if (otherAcc !== accordion) {
+                            otherAcc.classList.remove('active');
+                            otherAcc.querySelector('.accordion-content').style.maxHeight = null;
+                        }
+                    });
+                    
+                    // Toggle current accordion
+                    accordion.classList.toggle('active');
+                    const content = accordion.querySelector('.accordion-content');
+                    
+                    if (accordion.classList.contains('active')) {
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                        createConfetti(header);
+                    } else {
+                        content.style.maxHeight = null;
+                    }
+                });
+            });
+            
+            // Open first accordion by default
+            accordions[0].classList.add('active');
+            accordions[0].querySelector('.accordion-content').style.maxHeight = 
+                accordions[0].querySelector('.accordion-content').scrollHeight + 'px';
+        }
+        
+        // Create confetti effect
+        function createConfetti(element) {
+            const rect = element.getBoundingClientRect();
+            const colors = ['#ff6b6b', '#6baed6', '#ff8c00', '#7b68ee', '#9370db', '#ffb347'];
+            
+            for (let i = 0; i < 30; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = `${rect.left + (rect.width / 2)}px`;
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.width = `${Math.random() * 8 + 4}px`;
+                confetti.style.height = `${Math.random() * 8 + 4}px`;
+                confetti.style.animationDuration = `${Math.random() * 2 + 1}s`;
+                
+                document.body.appendChild(confetti);
+                
+                // Remove after animation
+                setTimeout(() => {
+                    confetti.remove();
+                }, 3000);
+            }
+        }
+        
+        // Initialize all effects
+        window.addEventListener('DOMContentLoaded', () => {
+            createFloatingIcons();
+            setupAccordions();
+        });
+
+          // Create floating hearts
+        function createFloatingHearts() {
+            const container = document.getElementById('floatingHearts');
+            const heartCount = 15;
+            
+            for (let i = 0; i < heartCount; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'floating-heart';
+                heart.innerHTML = '❤️';
+                
+                // Random position
+                heart.style.left = `${Math.random() * 100}%`;
+                
+                // Random size
+                const size = Math.random() * 1 + 0.5;
+                heart.style.fontSize = `${size}rem`;
+                
+                // Random animation duration and delay
+                const duration = Math.random() * 5 + 10;
+                const delay = Math.random() * 5;
+                heart.style.animationDuration = `${duration}s`;
+                heart.style.animationDelay = `${delay}s`;
+                
+                // Random color
+                const colors = ['#ff6b6b', '#ff8e8e', '#ffb6c1', '#ff4757'];
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                heart.style.color = color;
+                
+                container.appendChild(heart);
+            }
+        }
+        
+        // Filter gallery items
+        function setupFilterButtons() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Update active button
+                    filterBtns.forEach(btn => btn.classList.remove('active'));
+                    btn.classList.add('active');
+                    
+                    const filter = btn.dataset.filter;
+                    
+                    // Filter items
+                    galleryItems.forEach(item => {
+                        if (filter === 'all' || item.dataset.category === filter) {
+                            item.style.display = 'block';
+                            item.style.animation = 'fadeInUp 0.5s forwards';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        }
+        
+        // Lightbox functionality
+        function setupLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightboxImg');
+            const lightboxTitle = document.getElementById('lightboxTitle');
+            const lightboxDesc = document.getElementById('lightboxDesc');
+            const closeBtn = document.querySelector('.close-lightbox');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            
+            let currentIndex = 0;
+            let filteredItems = Array.from(galleryItems);
+            
+            // Open lightbox
+            galleryItems.forEach((item, index) => {
+                item.addEventListener('click', () => {
+                    const img = item.querySelector('img');
+                    const caption = item.querySelector('.gallery-caption h3');
+                    const desc = item.querySelector('.gallery-caption p');
+                    
+                    currentIndex = filteredItems.indexOf(item);
+                    updateLightbox(img.src, caption.textContent, desc.textContent);
+                    lightbox.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+            
+            // Close lightbox
+            closeBtn.addEventListener('click', () => {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+            
+            // Navigation
+            prevBtn.addEventListener('click', showPrevImage);
+            nextBtn.addEventListener('click', showNextImage);
+            
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (!lightbox.classList.contains('active')) return;
+                
+                if (e.key === 'Escape') {
+                    lightbox.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                } else if (e.key === 'ArrowLeft') {
+                    showPrevImage();
+                } else if (e.key === 'ArrowRight') {
+                    showNextImage();
+                }
+            });
+            
+            function updateLightbox(src, title, desc) {
+                lightboxImg.src = src;
+                lightboxTitle.textContent = title;
+                lightboxDesc.textContent = desc;
+            }
+            
+            function showPrevImage() {
+                currentIndex = (currentIndex - 1 + filteredItems.length) % filteredItems.length;
+                const item = filteredItems[currentIndex];
+                const img = item.querySelector('img');
+                const caption = item.querySelector('.gallery-caption h3');
+                const desc = item.querySelector('.gallery-caption p');
+                updateLightbox(img.src, caption.textContent, desc.textContent);
+            }
+            
+            function showNextImage() {
+                currentIndex = (currentIndex + 1) % filteredItems.length;
+                const item = filteredItems[currentIndex];
+                const img = item.querySelector('img');
+                const caption = item.querySelector('.gallery-caption h3');
+                const desc = item.querySelector('.gallery-caption p');
+                updateLightbox(img.src, caption.textContent, desc.textContent);
+            }
+            
+            // Update filtered items when filter changes
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const filter = btn.dataset.filter;
+                    filteredItems = Array.from(galleryItems).filter(item => {
+                        return filter === 'all' || item.dataset.category === filter;
+                    });
+                });
+            });
+        }
+        
+        // Like button functionality
+        function setupLikeButtons() {
+            const likeBtns = document.querySelectorAll('.like-btn');
+            
+            likeBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    btn.classList.toggle('active');
+                    const count = btn.querySelector('.like-count');
+                    
+                    if (btn.classList.contains('active')) {
+                        count.textContent = parseInt(count.textContent) + 1;
+                        createHeartAnimation(btn);
+                    } else {
+                        count.textContent = parseInt(count.textContent) - 1;
+                    }
+                });
+            });
+        }
+        
+        // Create heart animation when liking
+        function createHeartAnimation(btn) {
+            const heart = document.createElement('div');
+            heart.innerHTML = '❤️';
+            heart.style.position = 'absolute';
+            heart.style.fontSize = '1.5rem';
+            heart.style.color = '#ff4757';
+            heart.style.animation = 'float-up 1s ease-out forwards';
+            heart.style.pointerEvents = 'none';
+            
+            btn.appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 1000);
+        }
+        
+        // Initialize all effects
+        window.addEventListener('DOMContentLoaded', () => {
+            createFloatingHearts();
+            setupFilterButtons();
+            setupLightbox();
+            setupLikeButtons();
+            
+            // Animate gallery items on load
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            galleryItems.forEach((item, index) => {
+                item.style.animationDelay = `${index * 0.1}s`;
+            });
+        }); 
+
+        // Create floating hearts
+        function createFloatingHearts() {
+            const container = document.getElementById('floatingHearts');
+            const heartCount = 15;
+            
+            for (let i = 0; i < heartCount; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'floating-heart';
+                heart.innerHTML = '❤️';
+                
+                // Random position
+                heart.style.left = `${Math.random() * 100}%`;
+                
+                // Random size
+                const size = Math.random() * 1 + 0.5;
+                heart.style.fontSize = `${size}rem`;
+                
+                // Random animation duration and delay
+                const duration = Math.random() * 5 + 10;
+                const delay = Math.random() * 5;
+                heart.style.animationDuration = `${duration}s`;
+                heart.style.animationDelay = `${delay}s`;
+                
+                // Random color
+                const colors = ['#ff6b6b', '#ff8e8e', '#ffb6c1', '#ff4757'];
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                heart.style.color = color;
+                
+                container.appendChild(heart);
+            }
+        }
+        
+        // Countdown timer
+        function updateCountdown() {
+            const weddingDate = new Date('December 15, 2023 18:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            
+            // Add animation class when seconds change
+            if (seconds % 2 === 0) {
+                document.getElementById('countdown').classList.add('pulse');
+            } else {
+                document.getElementById('countdown').classList.remove('pulse');
+            }
+        }
+        
+        // Save the Date button
+        function setupSaveDateButton() {
+            const saveDateBtn = document.getElementById('saveDateBtn');
+            
+            saveDateBtn.addEventListener('click', () => {
+                // Create .ics file for calendar
+                const icsContent = `
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Wedding//EN
+BEGIN:VEVENT
+UID:12345@weddingwebsite.com
+DTSTAMP:${new Date().toISOString().replace(/[-:]/g, '').split('.')[0]}Z
+DTSTART:20231215T180000
+DTEND:20231216T000000
+SUMMARY:Priya & Raj's Wedding
+DESCRIPTION:Join us for our wedding celebration at The Grand Sunset Resort, Goa
+LOCATION:The Grand Sunset Resort, 123 Beachfront Avenue, Goa, India
+END:VEVENT
+END:VCALENDAR
+                `;
+                
+                const blob = new Blob([icsContent], { type: 'text/calendar' });
+                const url = URL.createObjectURL(blob);
+                
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = 'Priya-Raj-Wedding.ics';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                
+                // Create confetti effect
+                createConfetti();
+                
+                // Show confirmation
+                alert('The wedding date has been saved to your calendar!');
+            });
+        }
+        
+        // Create confetti effect
+        function createConfetti() {
+            const colors = ['#ff6b6b', '#ff8e8e', '#ffb6c1', '#87cefa', '#7b68ee'];
+            
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = `${Math.random() * 100}vw`;
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.width = `${Math.random() * 8 + 4}px`;
+                confetti.style.height = `${Math.random() * 8 + 4}px`;
+                confetti.style.animationDuration = `${Math.random() * 2 + 1}s`;
+                
+                document.body.appendChild(confetti);
+                
+                // Remove after animation
+                setTimeout(() => {
+                    confetti.remove();
+                }, 3000);
+            }
+        }
+        
+        // Initialize all effects
+        window.addEventListener('DOMContentLoaded', () => {
+            createFloatingHearts();
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+            setupSaveDateButton();
+            
+            // Add animation to schedule items
+            const scheduleItems = document.querySelectorAll('.schedule-item');
+            scheduleItems.forEach((item, index) => {
+                item.style.animationDelay = `${index * 0.1}s`;
+            });
+        });
+
+         // Create floating hearts
+        function createFloatingHearts() {
+            const container = document.getElementById('floatingHearts');
+            const heartCount = 15;
+            
+            for (let i = 0; i < heartCount; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'floating-heart';
+                heart.innerHTML = '❤️';
+                
+                // Random position
+                heart.style.left = `${Math.random() * 100}%`;
+                
+                // Random size
+                const size = Math.random() * 1 + 0.5;
+                heart.style.fontSize = `${size}rem`;
+                
+                // Random animation duration and delay
+                const duration = Math.random() * 5 + 10;
+                const delay = Math.random() * 5;
+                heart.style.animationDuration = `${duration}s`;
+                heart.style.animationDelay = `${delay}s`;
+                
+                // Random color
+                const colors = ['#ff6b6b', '#ff8e8e', '#ffb6c1', '#ff4757'];
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                heart.style.color = color;
+                
+                container.appendChild(heart);
+            }
+        }
+        
+        // Handle RSVP form submission
+        function setupRSVPForm() {
+            const form = document.getElementById('rsvpForm');
+            const guestsGroup = document.getElementById('guestsGroup');
+            const attendanceRadios = document.querySelectorAll('input[name="attendance"]');
+            const modal = document.getElementById('confirmationModal');
+            const modalMessage = document.getElementById('modalMessage');
+            const closeModal = document.getElementById('closeModal');
+            const modalCloseBtn = document.getElementById('modalCloseBtn');
+            const blessingsWall = document.getElementById('blessingsWall');
+            
+            // Show/hide guests field based on attendance
+            attendanceRadios.forEach(radio => {
+                radio.addEventListener('change', () => {
+                    if (radio.value === 'decline') {
+                        guestsGroup.style.opacity = '0.5';
+                        guestsGroup.style.pointerEvents = 'none';
+                    } else {
+                        guestsGroup.style.opacity = '1';
+                        guestsGroup.style.pointerEvents = 'all';
+                    }
+                });
+            });
+            
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Get form values
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const attendance = document.querySelector('input[name="attendance"]:checked').value;
+                const guests = attendance === 'accept' ? document.getElementById('guests').value : 0;
+                const message = document.getElementById('message').value;
+                
+                // In a real app, you would send this data to your server
+                console.log({ name, email, attendance, guests, message });
+                
+                // Show appropriate confirmation message
+                if (attendance === 'accept') {
+                    modalMessage.textContent = `Thank you, ${name}! We've received your RSVP for ${guests} guest(s) and can't wait to celebrate with you!`;
+                } else {
+                    modalMessage.textContent = `Thank you for letting us know, ${name}. We'll miss you but appreciate your response!`;
+                }
+                
+                // Add message to blessings wall if provided
+                if (message.trim() !== '') {
+                    addBlessing(name, message);
+                }
+                
+                // Show confirmation modal with celebration
+                modal.classList.add('active');
+                createConfetti();
+                
+                // Reset form
+                form.reset();
+            });
+            
+            // Close modal handlers
+            closeModal.addEventListener('click', () => {
+                modal.classList.remove('active');
+            });
+            
+            modalCloseBtn.addEventListener('click', () => {
+                modal.classList.remove('active');
+            });
+            
+            // Close modal when clicking outside
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                }
+            });
+        }
+        
+        // Add a new blessing to the wall
+        function addBlessing(name, message) {
+            const blessingsWall = document.getElementById('blessingsWall');
+            const newBlessing = document.createElement('div');
+            const delay = document.querySelectorAll('.blessing-card').length + 1;
+            
+            newBlessing.className = 'blessing-card';
+            newBlessing.style.setProperty('--delay', delay);
+            newBlessing.innerHTML = `
+                <p class="blessing-content">${message}</p>
+                <p class="blessing-author">- ${name}</p>
+            `;
+            
+            // Add to the beginning of the wall
+            blessingsWall.insertBefore(newBlessing, blessingsWall.firstChild);
+            
+            // Trigger animation
+            setTimeout(() => {
+                newBlessing.style.animation = 'fadeInScale 0.5s forwards';
+            }, 10);
+        }
+        
+        // Create confetti effect
+        function createConfetti() {
+            const colors = ['#ff6b6b', '#ff8e8e', '#ffb6c1', '#87cefa', '#7b68ee'];
+            
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = `${Math.random() * 100}vw`;
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.width = `${Math.random() * 8 + 4}px`;
+                confetti.style.height = `${Math.random() * 8 + 4}px`;
+                confetti.style.animationDuration = `${Math.random() * 2 + 1}s`;
+                
+                document.body.appendChild(confetti);
+                
+                // Remove after animation
+                setTimeout(() => {
+                    confetti.remove();
+                }, 3000);
+            }
+        }
+        
+        // Initialize all effects
+        window.addEventListener('DOMContentLoaded', () => {
+            createFloatingHearts();
+            setupRSVPForm();
+        });
+    </script>
+</body>
+</html>
